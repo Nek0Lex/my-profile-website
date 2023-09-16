@@ -47,7 +47,7 @@ export default function Project() {
           <div className="flex flex-wrap max-w-screen mt-10">
             {projectList
               .map((project, index) => (
-                <ProjectCard key={index} title={project.title} desc={project.desc} tags={project.tags} imgSrc={project.imgSrc} />
+                <ProjectCard key={project.title + index} title={project.title} desc={project.desc} tags={project.tags} imgSrc={project.imgSrc} />
               ))}
           </div>
         </div>

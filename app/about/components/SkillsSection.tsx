@@ -43,8 +43,8 @@ export default function SkillsSection() {
         <div>
           <div className="grid grid-cols-3 gap-4 mt-10 gap-y-10">
             {
-              logoList.map((logo) => (
-                <div className="flex flex-col justify-center items-center">
+              logoList.map((logo, index) => (
+                <div className="flex flex-col justify-center items-center" key={index}>
                   <Image src={logo.logoUrl} alt={logo.logoAlt} width={150} height={150}></Image>
                   <div className="text-center mt-5">
                     {logo.logoAlt}

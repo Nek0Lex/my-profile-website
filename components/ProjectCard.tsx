@@ -1,8 +1,8 @@
 import Image from 'next/image'
 
-export default function ProjectCard(props: { title: string, desc: string, tags: Array<string>, imgSrc: string }) {
+export default function ProjectCard(props: { key: string, title: string, desc: string, tags: Array<string>, imgSrc: string }) {
   return (
-    <div className="max-w-sm min-w-40 rounded overflow-hidden shadow-lg bg-white mr-5 mb-5 flex-auto">
+    <div className="max-w-sm min-w-40 rounded overflow-hidden shadow-lg bg-white mr-5 mb-5 flex-auto" key={props.key}>
       <Image
         src={props.imgSrc != "" ? require(`../public/${props.imgSrc}`) : ""}
         alt=""
@@ -18,8 +18,8 @@ export default function ProjectCard(props: { title: string, desc: string, tags: 
       </div>
       <div className="px-6 pt-4 pb-2">
         {
-          props.tags.map((tag) => (
-            <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+          props.tags.map((tag, index) => (
+            <span key={index} className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
               {tag}
             </span>))
         }
