@@ -10,7 +10,7 @@ export default function Home() {
       <main className="flex flex-col h-screen">
         <NavBar />
         <div className="flex flex-row h-full items-center justify-center">
-          <div className="flex w-1/2 flex-col h-screen pl-24 justify-center">
+          <div className="flex w-1/2 flex-col h-screen pl-24 justify-center text-white">
             <h1 className="text-left text-5xl">Hello There!👋</h1>
             <br />
             <h1 className="text-left text-3xl">Welcome!</h1>
