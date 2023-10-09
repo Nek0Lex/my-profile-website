@@ -1,6 +1,10 @@
+'use client';
 import Link from "next/link";
+import { useState } from "react";
 
 export default function NavBar() {
+  const [toggleNavMenu, setToggleNavMenu] = useState(true)
+
   return (
     <>
       <nav className="flex items-center justify-between flex-wrap bg-black p-6 sticky top-0">
@@ -18,8 +22,11 @@ export default function NavBar() {
             Homing.dev
           </span>
         </div>
+
         <div className="block lg:hidden">
-          <button className="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
+          <button className="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white" onClick={() => {
+            setToggleNavMenu(!toggleNavMenu)
+          }}>
             <svg
               className="fill-current h-3 w-3"
               viewBox="0 0 20 20"
@@ -30,7 +37,8 @@ export default function NavBar() {
             </svg>
           </button>
         </div>
-        <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+
+        <div className={"w-full block flex-grow lg:flex lg:items-center lg:w-auto " + (toggleNavMenu ? "hidden" : "")}>
           <div className="text-sm lg:flex-grow">
             <Link
               href="/"
